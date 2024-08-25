@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.hero{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(ressources/background.jpg) ;
+    background-position: center;
+    background-size: cover;
+    padding: 10px 10%;
+    overflow: hidden;
+    position: relative;
+}
+.logo{
+    width: 140px;
+}
+
+nav {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 400;
+    position: relative; /* Required for positioning pseudo-elements */
+    padding: 5px 0; /* Add some vertical padding to accommodate the underline */
+}
+
+/* Underline effect */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0; /* Position at the bottom of the link */
+    width: 0;
+    height: 2px;
+    background: #0054ad; /* Color of the underline */
+    transition: width 0.3s ease; /* Smooth transition for the underline */
+}
+
+/* Expand underline on hover */
+nav ul li a:hover::after {
+    width: 100%; /* Expands the underline to full width on hover */
+}
+
+.login-btn {
+    text-decoration: none;
+    color: #333;
+    margin-right: 15px;
+    font-weight: 400;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 14px 40px;
+    color: #fff;
+    background-image: linear-gradient(45deg, #00263b, #2e7fc2);
+    font-size: 14px;
+    border-radius: 30px;
+    border-top-right-radius: 0;
+    transition:0.5s ;
+}
+
+.content{
+    margin-top: 10%;
+    max-width: 600px;
+}
+.content h1{
+    font-size: 70px;
+    color: #222;
+}
+.content p{
+    margin: 10px 0 30px;
+    color: #333;
+}
+.content .btn{
+    padding: 15px 80px;
+    font-size: 18px;
+}
+
+.btn:hover{
+    border-top-right-radius: 30px ;
+}
+.feature-img{
+    width: 330px;
+    position: absolute;
+    bottom: 80;
+    right: 20%;
+}
+.anim {
+    opacity: 0;
+    transform: translateY(-50px); /* Start from above */
+    animation: slideIn 0.8s ease-out forwards;
+}
+
+/* Keyframes for smooth slide-in */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px); /* Start off-screen */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at the final position */
+    }
+}
